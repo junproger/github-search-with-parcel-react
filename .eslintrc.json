@@ -1,0 +1,80 @@
+{
+    "root": true,
+    "plugins": [
+        "react",
+        "import",
+        "prettier",
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "prettier",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:import/typescript",
+        "plugin:import/recommended",
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2022,
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "env": {
+        "es6": true,
+        "es2020": true,
+        "es2021": true,
+        "es2022": true,
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "no-debugger": "off",
+        "no-console": "error",
+        "curly": ["error", "all"],
+        "no-param-reassign": "error",
+        "prettier/prettier": [
+          "error",
+          {
+            "semi": true,
+            "tabWidth": 2,
+            "endOfLine": "lf",
+            "printWidth": 120,
+            "singleQuote": true,
+            "trailingComma": "es5",
+            "arrowParens": "always"
+          }
+        ],
+        "class-methods-use-this": "off",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        // turn on errors for missing imports
+        "import/no-unresolved": "error",
+        "max-lines-per-function": ["error", 40],
+        "@typescript-eslint/array-type": "error",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-use-before-define": "error",
+        "@typescript-eslint/explicit-function-return-type": "error"
+    },
+    "settings": {
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+          "typescript": {
+            "alwaysTryTypes": true,
+            "project": ["./tsconfig.json"]
+          },
+          "node": true
+        },
+        "react": {
+          "pragma": "React",
+          "version": "detect",
+          "fragment": "Fragment"
+        }
+      }
+}
