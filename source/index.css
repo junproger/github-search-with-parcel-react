@@ -2,24 +2,22 @@ body,
 .root {
   height: 100%;
   background-color: black;
-  background-image: url('./assets/react.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-image: none;
   padding: 20px;
   margin: 0;
 }
 
 h1 {
-  color: crimson;
-  font-size: 6rem;
+  color: deeppink;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
 }
 
-.hello {
-  width: 256px;
-  height: 256px;
+.github {
+  width: 96px;
+  height: 96px;
+  vertical-align: middle;
 }
 
 .title {

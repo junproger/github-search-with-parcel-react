@@ -1,15 +1,14 @@
 import React from 'react';
 
-import hello from '../../assets/hello.png';
+import github from '../../assets/github-logo.webp';
+
+import { Header } from '../view/Header';
 
 export const App: React.FC = () => {
+  const title = 'Github-Search React-App';
   return (
     <>
-      <h1>The Project Started!</h1>
-      <div className="title">
-        <img src={hello} className="hello" alt="hello" />
-        Welcome to awesome project! 🚀
-      </div>
+      <Header image={github} attrib="github" title={title} />
     </>
   );
 };
