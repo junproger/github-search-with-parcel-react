@@ -1,6 +1,6 @@
 import React from 'react';
 
-import github from '../../assets/github-logo.webp';
+import github from '../../assets/github-logo.png';
 
 import { Header } from '../view/Header';
 
