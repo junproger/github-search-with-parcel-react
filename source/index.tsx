@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { createRoot } from 'react-dom/client';
-import { container } from './constants/container';
+import { appContainer } from './constants/appContainer';
 
 import { App } from './components/app/App';
 
-const ROOT = createRoot(container as HTMLElement);
+const ROOT = createRoot(appContainer as HTMLElement);
 
 ROOT.render(<App />);
