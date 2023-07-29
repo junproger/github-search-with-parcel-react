@@ -15,6 +15,8 @@ export const Search: React.FC<Search> = (props: Search) => {
   const changeHandle = (e: React.ChangeEvent<HTMLInputElement>): void => {
     if (e.target.value.trim()) {
       setValue(e.target.value);
+    } else {
+      setValue('');
     }
   };
   const pressHandle = (e: React.KeyboardEvent<HTMLInputElement>): void => {
@@ -34,13 +36,13 @@ export const Search: React.FC<Search> = (props: Search) => {
           size={41}
           type="search"
           name="search"
+          title={title}
           autoFocus={true}
           value={getValue}
-          onChange={changeHandle}
-          className={styles['input']}
           placeholder={holder}
-          title={title}
+          onChange={changeHandle}
           onKeyDown={pressHandle}
+          className={styles['input']}
         ></input>
       </label>
     </div>
