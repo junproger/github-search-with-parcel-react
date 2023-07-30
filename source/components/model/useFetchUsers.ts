@@ -6,9 +6,9 @@ import QueriesType from '../../types/QueriesType';
 
 export const useFetchUsers = (queries: QueriesType): ISearchData | null => {
   const [getRespn, setRespn] = useState<ISearchData | null>(null);
+  const { query, sort, order, page } = queries;
 
   useEffect(() => {
-    const { query, sort, order, page } = queries;
     if (!queries.query) {
       setRespn(null);
       return;
