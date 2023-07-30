@@ -4,7 +4,7 @@ import { loging } from '../../utils/loging';
 import { ISearchData } from '../../types/ISearchData';
 import QueriesType from '../../types/QueriesType';
 
-export const useFetchUsers = (queries: QueriesType): ISearchData | null => {
+const useFetchUsers = (queries: QueriesType): ISearchData | null => {
   const [getRespn, setRespn] = useState<ISearchData | null>(null);
   const { query, squery, page } = queries;
 
@@ -28,3 +28,5 @@ export const useFetchUsers = (queries: QueriesType): ISearchData | null => {
   }, [queries]);
   return getRespn;
 };
+
+export default useFetchUsers;
