@@ -6,6 +6,7 @@ import QueriesType from '../../types/QueriesType';
 
 import { Header } from '../view/Header';
 import { Search } from '../control/Search';
+import { Results } from '../view/Results';
 import { useFetchUsers } from '../model/useFetchUsers';
 import { loging } from 'utils/loging';
 
@@ -30,6 +31,7 @@ export const App: React.FC = () => {
     <>
       <Header image={github} attrib="github" title={Texts.titleHeader} />
       <Search callback={callquery} holder={Texts.searchHolder} inform={Texts.informSearch} title={Texts.titleSearch} />
+      {respData ? <Results items={respData.items} /> : <div></div>}
     </>
   );
 };
