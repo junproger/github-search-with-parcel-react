@@ -1,7 +1,6 @@
 type QueriesType = {
   query: string;
-  sort: string;
-  order: string;
+  squery: string;
   page: number;
 };
 

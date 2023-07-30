@@ -6,7 +6,7 @@ import QueriesType from '../../types/QueriesType';
 
 export const useFetchUsers = (queries: QueriesType): ISearchData | null => {
   const [getRespn, setRespn] = useState<ISearchData | null>(null);
-  const { query, sort, order, page } = queries;
+  const { query, squery, page } = queries;
 
   useEffect(() => {
     if (!queries.query) {
@@ -14,9 +14,7 @@ export const useFetchUsers = (queries: QueriesType): ISearchData | null => {
       return;
     }
     const fetchingUsers = async (): Promise<ISearchData> => {
-      const dataUsers = await fetch(
-        `https://api.github.com/search/users?q=${query}&sort=${sort}&order=${order}&page=${page}`
-      )
+      const dataUsers = await fetch(`https://api.github.com/search/users?q=${query}${squery}&page=${page}`)
         .then((response) => response.json())
         .then((data: ISearchData) => data)
         .catch((err) => {
