@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 
 import styles from './search.module.css';
+import textCollection from '../../constants/textCollection';
 
 export type Search = {
   callback: (value: string) => void;
-  inform: string;
-  holder: string;
-  title: string;
+  content: typeof textCollection;
 };
 
-export const Search: React.FC<Search> = ({ callback, inform, holder, title }) => {
+export const Search: React.FC<Search> = ({ callback, content }) => {
   const [getValue, setValue] = useState('');
   const changeHandle = (e: React.ChangeEvent<HTMLInputElement>): void => {
     if (e.target.value.trim()) {
@@ -30,17 +29,17 @@ export const Search: React.FC<Search> = ({ callback, inform, holder, title }) =>
   };
   return (
     <div className={styles['search']}>
-      <p className={styles['inform']}>ⓘ {inform}</p>
+      <p className={styles['inform']}>ⓘ {content.informSearch}</p>
       <label className={styles['label']}>
         Search users by name:
         <input
           size={41}
           type="search"
           name="search"
-          title={title}
+          title={content.titleSearch}
           autoFocus={true}
           value={getValue}
-          placeholder={holder}
+          placeholder={content.searchHolder}
           onChange={changeHandle}
           onKeyDown={pressHandle}
           className={styles['input']}

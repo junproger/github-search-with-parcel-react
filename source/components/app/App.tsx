@@ -38,7 +38,7 @@ export const App: React.FC = () => {
   return (
     <>
       <Header image={github} attrib="github" title={Texts.titleHeader} />
-      <Search callback={callquery} holder={Texts.searchHolder} inform={Texts.informSearch} title={Texts.titleSearch} />
+      <Search callback={callquery} content={Texts} />
       <Navbar callback={callsort} />
       {respData ? <Results items={respData.items} /> : <div></div>}
     </>
