@@ -1,0 +1,19 @@
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  list-style-position: inside;
+}
+
+.item {
+  color: beige;
+  flex: 0 0 200px;
+  padding: 10px;
+  border: none;
+}
+
+.item:hover {
+  cursor: pointer;
+  background-color: #333;
+}
