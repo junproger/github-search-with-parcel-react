@@ -20,7 +20,7 @@ export const Navbar: React.FC<Sort> = ({ callback }) => {
       <label className={styles['label']}>
         Sort by:
         <select name="sort" value={getValue} disabled={false} className={styles['select']} onChange={selectHandle}>
-          <option selected={true} className={styles['options']} value={SortOrder.BestMatch}>
+          <option className={styles['options']} value={SortOrder.BestMatch}>
             Best Matches
           </option>
           <option className={styles['options']} value={SortOrder.HighRepo}>
