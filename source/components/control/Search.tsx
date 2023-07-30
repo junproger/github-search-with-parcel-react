@@ -9,19 +9,20 @@ export type Search = {
   title: string;
 };
 
-export const Search: React.FC<Search> = (props: Search) => {
-  const { callback, inform, holder, title } = props;
+export const Search: React.FC<Search> = ({ callback, inform, holder, title }) => {
   const [getValue, setValue] = useState('');
   const changeHandle = (e: React.ChangeEvent<HTMLInputElement>): void => {
     if (e.target.value.trim()) {
       setValue(e.target.value);
     } else {
       setValue('');
+      callback('');
     }
   };
   const pressHandle = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Delete') {
       setValue('');
+      callback('');
     }
     if (e.key === 'Enter') {
       callback(getValue);
