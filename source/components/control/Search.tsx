@@ -31,9 +31,9 @@ export const Search: React.FC<Search> = ({ callback, content }) => {
     <div className={styles['search']}>
       <p className={styles['inform']}>ⓘ {content.informSearch}</p>
       <label className={styles['label']}>
-        Search users by name:
+        Search users by login:
         <input
-          size={41}
+          size={42}
           type="search"
           name="search"
           title={content.titleSearch}
