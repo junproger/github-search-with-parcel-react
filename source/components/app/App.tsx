@@ -16,7 +16,7 @@ export const App: React.FC = () => {
   const [getQuery, setQuery] = useState<QueriesType>({
     query: '',
     squery: '&sort=bestmatches&order=desc',
-    page: 1,
+    page: '1',
   });
   const callquery = (target: number, value: string): void => {
     if (target === 1) {
@@ -32,6 +32,14 @@ export const App: React.FC = () => {
         return {
           ...prev,
           squery: value,
+        };
+      });
+    }
+    if (target === 3) {
+      setQuery((prev) => {
+        return {
+          ...prev,
+          page: value,
         };
       });
     }
