@@ -1,3 +1,11 @@
+.sorting {
+  height: 27px;
+  background-color: #111;
+  color: bisque;
+  vertical-align: middle;
+  padding: 2px;
+}
+
 .label {
   color: bisque;
   font-size: 1rem;

@@ -11,7 +11,7 @@ export type Sorting = {
 
 export const Sorting: React.FC<Sorting> = ({ value, handle }) => {
   return (
-    <div>
+    <div className={styles['sorting']}>
       <label className={styles['label']}>
         Sort by:
         <select name="sort" value={value} disabled={false} className={styles['select']} onChange={handle}>
