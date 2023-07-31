@@ -1,7 +1,7 @@
 type QueriesType = {
   query: string;
   squery: string;
-  page: number;
+  page: string;
 };
 
 export default QueriesType;
