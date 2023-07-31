@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './header.module.css';
+import * as styles from './header.module.css';
 
 export type Header = {
   image: string;

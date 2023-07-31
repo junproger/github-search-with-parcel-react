@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from './navbar.module.css';
+import * as styles from './navbar.module.css';
 import { loging } from '../../utils/loging';
 import { SortOrder } from '../../constants/apiSortOrder';
 

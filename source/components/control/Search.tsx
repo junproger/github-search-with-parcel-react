@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from './search.module.css';
+import * as styles from './search.module.css';
 import textCollection from '../../constants/textCollection';
 
 export type Search = {

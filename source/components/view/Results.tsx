@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './results.module.css';
+import * as styles from './results.module.css';
 import { ISearchItem } from '../../types/ISearchItem';
 import { loging } from '../../utils/loging';
 
