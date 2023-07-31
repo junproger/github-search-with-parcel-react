@@ -8,3 +8,24 @@
   background-color: #111;
   color: deeppink;
 }
+
+.arrows {
+  background-color: #222;
+  border-radius: 5px;
+  padding: 3px 6px;
+}
+
+.arrows:hover {
+  cursor: pointer;
+}
+
+.arrows:active {
+  padding: 2px 4px;
+}
+
+.disable {
+  background-color: #000;
+  color: dimgray;
+  border-radius: 5px;
+  padding: 3px 6px;
+}
