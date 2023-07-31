@@ -1,0 +1,10 @@
+.paging {
+  width: auto;
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #111;
+  color: deeppink;
+}
