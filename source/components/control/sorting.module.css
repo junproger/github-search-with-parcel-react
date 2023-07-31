@@ -1,0 +1,28 @@
+.label {
+  color: bisque;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.select {
+  color: deeppink;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: black;
+  border: 1px solid beige;
+  border-radius: 5px;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.select:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.options {
+  color: deeppink;
+  font-size: 1rem;
+  font-weight: 600;
+}

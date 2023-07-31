@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
 import * as styles from './navbar.module.css';
-import { loging } from '../../utils/loging';
-import { SortOrder } from '../../constants/apiSortOrder';
 
-export type Sort = {
+import { loging } from '../../utils/loging';
+import { Sorting } from './Sorting';
+
+export type Navbar = {
   callback: (value: string) => void;
 };
 
-export const Navbar: React.FC<Sort> = ({ callback }) => {
+export const Navbar: React.FC<Navbar> = ({ callback }) => {
   const [getValue, setValue] = useState('');
   const selectHandle = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setValue(e.target.value);
@@ -17,26 +18,7 @@ export const Navbar: React.FC<Sort> = ({ callback }) => {
   };
   return (
     <div className={styles['navbar']}>
-      <label className={styles['label']}>
-        Sort by:
-        <select name="sort" value={getValue} disabled={false} className={styles['select']} onChange={selectHandle}>
-          <option className={styles['options']} value={SortOrder.BestMatch}>
-            Best Matches
-          </option>
-          <option className={styles['options']} value={SortOrder.HighRepo}>
-            High Repositories
-          </option>
-          <option className={styles['options']} value={SortOrder.LowRepo}>
-            Low Repositories
-          </option>
-          <option className={styles['options']} value={SortOrder.HighFoll}>
-            High Followers
-          </option>
-          <option className={styles['options']} value={SortOrder.LowFoll}>
-            Low Followers
-          </option>
-        </select>
-      </label>
+      <Sorting value={getValue} handle={selectHandle} />
     </div>
   );
 };
