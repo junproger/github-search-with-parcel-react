@@ -18,21 +18,23 @@ export const App: React.FC = () => {
     squery: '&sort=bestmatches&order=desc',
     page: 1,
   });
-  const callquery = (value: string): void => {
-    setQuery((prev) => {
-      return {
-        ...prev,
-        query: value,
-      };
-    });
-  };
-  const callsort = (value: string): void => {
-    setQuery((prev) => {
-      return {
-        ...prev,
-        squery: value,
-      };
-    });
+  const callquery = (target: number, value: string): void => {
+    if (target === 1) {
+      setQuery((prev) => {
+        return {
+          ...prev,
+          query: value,
+        };
+      });
+    }
+    if (target === 2) {
+      setQuery((prev) => {
+        return {
+          ...prev,
+          squery: value,
+        };
+      });
+    }
   };
   const RESPDATA = useFetchUsers(getQuery);
   const RESTOTAL = RESPDATA?.total_count;
@@ -41,7 +43,7 @@ export const App: React.FC = () => {
     <>
       <Header image={github} attrib="github" title={Texts.titleHeader} />
       <Search callback={callquery} content={Texts} />
-      <Navbar callback={callsort} page={getQuery.page} total={RESTOTAL} />
+      <Navbar callback={callquery} total={RESTOTAL} />
       {RESPDATA ? <Results items={RESPDATA.items} /> : <Blank />}
     </>
   );
