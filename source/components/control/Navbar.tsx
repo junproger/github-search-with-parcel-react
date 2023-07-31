@@ -7,22 +7,28 @@ import { Sorting } from './Sorting';
 import { Paging } from './Paging';
 
 export type Navbar = {
-  callback: (value: string) => void;
+  callback: (target: number, value: string) => void;
   total: number | undefined;
-  page: number;
 };
 
-export const Navbar: React.FC<Navbar> = ({ callback, total, page }) => {
+export const Navbar: React.FC<Navbar> = ({ callback, total }) => {
   const [getValue, setValue] = useState('');
+  const [getPage, setPage] = useState(1);
   const selectHandle = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setValue(e.target.value);
     loging(e.target.value);
-    callback(e.target.value);
+    callback(2, e.target.value);
+  };
+  const pagingHandle = (page: number): void => {
+    setPage(page);
+    loging(page);
+    // changes type from number to string
+    callback(3, `${page}`);
   };
   return (
     <div className={styles['navbar']}>
       <Sorting value={getValue} handle={selectHandle} />
-      <Paging total={total} page={page} />
+      <Paging total={total} page={getPage} handle={pagingHandle} />
     </div>
   );
 };
