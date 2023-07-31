@@ -19,30 +19,22 @@ export const App: React.FC = () => {
     page: '1',
   });
   const callquery = (target: number, value: string): void => {
+    let proper = '';
     if (target === 1) {
-      setQuery((prev) => {
-        return {
-          ...prev,
-          query: value,
-        };
-      });
+      proper = 'query';
     }
     if (target === 2) {
-      setQuery((prev) => {
-        return {
-          ...prev,
-          squery: value,
-        };
-      });
+      proper = 'squery';
     }
     if (target === 3) {
-      setQuery((prev) => {
-        return {
-          ...prev,
-          page: value,
-        };
-      });
+      proper = 'page';
     }
+    setQuery((prev) => {
+      return {
+        ...prev,
+        [proper]: value,
+      };
+    });
   };
   const RESPDATA = useFetchUsers(getQuery);
   const RESTOTAL = RESPDATA?.total_count;
