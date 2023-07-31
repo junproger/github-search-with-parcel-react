@@ -4,7 +4,7 @@ import * as styles from './search.module.css';
 import textCollection from '../../constants/textCollection';
 
 export type Search = {
-  callback: (value: string) => void;
+  callback: (target: number, value: string) => void;
   content: typeof textCollection;
 };
 
@@ -15,16 +15,16 @@ export const Search: React.FC<Search> = ({ callback, content }) => {
       setValue(e.target.value);
     } else {
       setValue('');
-      callback('');
+      callback(1, '');
     }
   };
   const pressHandle = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Delete') {
       setValue('');
-      callback('');
+      callback(1, '');
     }
     if (e.key === 'Enter') {
-      callback(getValue);
+      callback(1, getValue);
     }
   };
   return (
