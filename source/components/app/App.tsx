@@ -5,6 +5,7 @@ import Texts from '../../constants/textCollection';
 import QueriesType from '../../types/QueriesType';
 import useFetchUsers from '../model/useFetchUsers';
 
+import { Blank } from '../view/Blank';
 import { Header } from '../view/Header';
 import { Search } from '../control/Search';
 import { Results } from '../view/Results';
@@ -33,14 +34,15 @@ export const App: React.FC = () => {
       };
     });
   };
-  const respData = useFetchUsers(getQuery);
-  loging(respData);
+  const RESPDATA = useFetchUsers(getQuery);
+  const RESTOTAL = RESPDATA?.total_count;
+  loging(RESPDATA);
   return (
     <>
       <Header image={github} attrib="github" title={Texts.titleHeader} />
       <Search callback={callquery} content={Texts} />
-      <Navbar callback={callsort} />
-      {respData ? <Results items={respData.items} /> : <div></div>}
+      <Navbar callback={callsort} page={getQuery.page} total={RESTOTAL} />
+      {RESPDATA ? <Results items={RESPDATA.items} /> : <Blank />}
     </>
   );
 };
