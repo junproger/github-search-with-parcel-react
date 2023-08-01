@@ -1,0 +1,25 @@
+.inform {
+  width: 100%;
+  height: 50px;
+  padding: 20px 10px;
+}
+
+.tableblock,
+.tablehead,
+.tablebody {
+  min-width: 100%;
+  table-layout: fixed;
+  border: 1px solid teal;
+}
+
+.firstrow {
+  color: darkslategray;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.secondrow {
+  color: salmon;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
