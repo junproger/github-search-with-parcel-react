@@ -38,7 +38,9 @@ const useFetchUsers = (queries: QueriesType): IFetchUsers => {
           alert(err);
           throw err;
         });
-      const isData = (data: ISearchData | ISearchError): data is ISearchData => true;
+      const isData = (data: ISearchData | ISearchError): data is ISearchData => {
+        return (data as ISearchData).incomplete_results !== undefined;
+      };
       if (isData(dataUsers)) {
         setRespn({
           done: true,
