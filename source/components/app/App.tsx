@@ -37,14 +37,18 @@ export const App: React.FC = () => {
     });
   };
   const RESPDATA = useFetchUsers(getQuery);
-  const RESTOTAL = RESPDATA?.total_count;
+  const RESTOTAL = RESPDATA.resp?.total_count;
   loging(RESPDATA);
   return (
     <>
       <Header image={github} attrib="github" title={Texts.titleHeader} />
       <Search callback={callquery} content={Texts} />
       <Navbar callback={callquery} total={RESTOTAL} />
-      {RESPDATA ? <Results items={RESPDATA.items} /> : <Blank />}
+      {RESPDATA.done && RESPDATA.resp ? (
+        <Results items={RESPDATA.resp.items} />
+      ) : (
+        <Blank message={Texts.errorMessage} />
+      )}
     </>
   );
 };
