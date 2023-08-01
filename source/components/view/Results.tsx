@@ -11,6 +11,7 @@ export type Results = {
 export const Results: React.FC<Results> = (props: Results) => {
   const { items } = props;
   const clickHandle = (e: React.MouseEvent<HTMLLIElement>): void => {
+    // loging clicks for check handling
     loging(e.currentTarget.dataset['login']);
   };
   return (
