@@ -4,12 +4,14 @@ import github from '../../assets/github-logo.png';
 import Texts from '../../constants/textCollection';
 import QueriesType from '../../types/QueriesType';
 import useFetchUsers from '../model/useFetchUsers';
+import useFetchInfo from '../model/useFetchInfo';
 
 import { Blank } from '../view/Blank';
 import { Header } from '../view/Header';
 import { Search } from '../control/Search';
 import { Results } from '../view/Results';
 import { Navbar } from '../control/Navbar';
+import { Inform } from '../view/Inform';
 
 export const App: React.FC = () => {
   const [getQuery, setQuery] = useState<QueriesType>({
@@ -17,6 +19,7 @@ export const App: React.FC = () => {
     squery: '&sort=bestmatches&order=desc',
     page: '1',
   });
+  const [getLogin, setLogin] = useState('');
   const callquery = (target: number, value: string): void => {
     let proper = '';
     if (target === 1) {
@@ -37,13 +40,16 @@ export const App: React.FC = () => {
   };
   const RESPDATA = useFetchUsers(getQuery);
   const RESTOTAL = RESPDATA.resp?.total_count;
+  const callinfo = (login: string): void => setLogin(login);
+  const USERINFO = useFetchInfo(getLogin);
   return (
     <>
       <Header image={github} attrib="github" title={Texts.titleHeader} />
-      <Search callback={callquery} content={Texts} />
+      <Search callback={callquery} clearinfo={callinfo} content={Texts} />
       <Navbar callback={callquery} total={RESTOTAL} />
-      {RESPDATA.done && RESPDATA.resp ? (
-        <Results items={RESPDATA.resp.items} />
+      <Inform inform={USERINFO.info} />
+      {RESPDATA.resp?.total_count && RESPDATA.resp ? (
+        <Results callback={callinfo} items={RESPDATA.resp.items} />
       ) : (
         <Blank message={Texts.errorMessage} />
       )}
