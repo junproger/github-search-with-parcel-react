@@ -2,17 +2,17 @@ import React from 'react';
 
 import * as styles from './results.module.css';
 import { ISearchItem } from '../../types/ISearchItem';
-import { loging } from '../../utils/loging';
 
 export type Results = {
+  callback: (login: string) => void;
   items: ISearchItem[];
 };
 
-export const Results: React.FC<Results> = (props: Results) => {
-  const { items } = props;
+export const Results: React.FC<Results> = ({ items, callback }) => {
   const clickHandle = (e: React.MouseEvent<HTMLLIElement>): void => {
-    // loging clicks for check handling
-    loging(e.currentTarget.dataset['login']);
+    if (e.currentTarget.dataset['login']) {
+      callback(e.currentTarget.dataset['login']);
+    }
   };
   return (
     <ol className={styles['list']}>
