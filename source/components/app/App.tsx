@@ -10,7 +10,6 @@ import { Header } from '../view/Header';
 import { Search } from '../control/Search';
 import { Results } from '../view/Results';
 import { Navbar } from '../control/Navbar';
-import { loging } from '../../utils/loging';
 
 export const App: React.FC = () => {
   const [getQuery, setQuery] = useState<QueriesType>({
@@ -38,7 +37,6 @@ export const App: React.FC = () => {
   };
   const RESPDATA = useFetchUsers(getQuery);
   const RESTOTAL = RESPDATA.resp?.total_count;
-  loging(RESPDATA);
   return (
     <>
       <Header image={github} attrib="github" title={Texts.titleHeader} />

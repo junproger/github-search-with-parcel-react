@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import * as styles from './navbar.module.css';
 
-import { loging } from '../../utils/loging';
 import { Sorting } from './Sorting';
 import { Paging } from './Paging';
 
@@ -16,12 +15,10 @@ export const Navbar: React.FC<Navbar> = ({ callback, total }) => {
   const [getPage, setPage] = useState(1);
   const selectHandle = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setValue(e.target.value);
-    loging(e.target.value);
     callback(2, e.target.value);
   };
   const pagingHandle = (page: number): void => {
     setPage(page);
-    loging(page);
     // changes type from number to string
     callback(3, `${page}`);
   };
