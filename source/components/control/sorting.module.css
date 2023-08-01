@@ -1,9 +1,11 @@
 .sorting {
+  width: auto;
   height: 27px;
+  flex: 0 1 auto;
   background-color: #111;
   color: bisque;
   vertical-align: middle;
-  padding: 2px;
+  padding: 2px 0;
 }
 
 .label {

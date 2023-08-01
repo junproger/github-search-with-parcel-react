@@ -1,12 +1,13 @@
 .paging {
   width: auto;
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-evenly;
   background-color: #111;
   color: deeppink;
+  padding: 2px 10px;
 }
 
 .arrows {
