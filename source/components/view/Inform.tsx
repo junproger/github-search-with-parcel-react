@@ -27,7 +27,7 @@ export const Inform: React.FC<Inform> = ({ inform }) => {
             <td>{inform?.id}</td>
             <td>{inform?.name}</td>
             <td>
-              <a target="_new" href={inform?.html_url}>
+              <a target="new" href={inform?.html_url}>
                 {inform?.login}
               </a>
             </td>
