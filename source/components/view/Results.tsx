@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import * as styles from './results.module.css';
 import { ISearchItem } from '../../types/ISearchItem';

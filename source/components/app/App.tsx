@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+
+import { useState } from 'react';
 
 import github from '../../assets/github-logo.png';
 import Texts from '../../constants/textCollection';
