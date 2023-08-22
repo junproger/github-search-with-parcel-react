@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+
+import { useState } from 'react';
 
 import * as styles from './search.module.css';
 import textCollection from '../../constants/textCollection';
