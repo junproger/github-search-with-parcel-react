@@ -22,7 +22,7 @@
           "jsx": true
         },
         "sourceType": "module",
-        "project": "./tsconfig.json"
+        "project": true
     },
     "env": {
         "es6": true,
