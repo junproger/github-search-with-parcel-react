@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-import { useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 
 import * as styles from './navbar.module.css';
 
@@ -12,10 +10,10 @@ export type Navbar = {
   total: number | undefined;
 };
 
-export const Navbar: React.FC<Navbar> = ({ callback, total }) => {
+export const Navbar: FC<Navbar> = ({ callback, total }) => {
   const [getValue, setValue] = useState('');
   const [getPage, setPage] = useState(1);
-  const selectHandle = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+  const selectHandle = (e: ChangeEvent<HTMLSelectElement>): void => {
     setValue(e.target.value);
     callback(2, e.target.value);
   };

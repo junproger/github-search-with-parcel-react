@@ -1,8 +1,7 @@
-import * as React from 'react';
-
-import { useState } from 'react';
+import { ChangeEvent, FC, KeyboardEvent, useState } from 'react';
 
 import * as styles from './search.module.css';
+
 import textCollection from '../../constants/textCollection';
 
 export type Search = {
@@ -11,9 +10,9 @@ export type Search = {
   content: typeof textCollection;
 };
 
-export const Search: React.FC<Search> = ({ clearinfo, callback, content }) => {
+export const Search: FC<Search> = ({ clearinfo, callback, content }) => {
   const [getValue, setValue] = useState('');
-  const changeHandle = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const changeHandle = (e: ChangeEvent<HTMLInputElement>): void => {
     if (e.target.value.trim()) {
       setValue(e.target.value);
     } else {
@@ -22,7 +21,7 @@ export const Search: React.FC<Search> = ({ clearinfo, callback, content }) => {
       clearinfo('');
     }
   };
-  const pressHandle = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+  const pressHandle = (e: KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Delete') {
       setValue('');
       callback(1, '');

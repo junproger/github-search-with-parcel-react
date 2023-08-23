@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent, FC } from 'react';
 
 import * as styles from './sorting.module.css';
 
@@ -6,10 +6,10 @@ import { SortOrder } from '../../constants/apiSortOrder';
 
 export type Sorting = {
   value: string;
-  handle: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  handle: (e: ChangeEvent<HTMLSelectElement>) => void;
 };
 
-export const Sorting: React.FC<Sorting> = ({ value, handle }) => {
+export const Sorting: FC<Sorting> = ({ value, handle }) => {
   return (
     <div className={styles['sorting']}>
       <label className={styles['label']}>

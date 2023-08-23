@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-import { useState } from 'react';
+import { FC, useState } from 'react';
 
 import github from '../../assets/github-logo.png';
 import Texts from '../../constants/textCollection';
@@ -15,7 +13,7 @@ import { Results } from '../view/Results';
 import { Navbar } from '../control/Navbar';
 import { Inform } from '../view/Inform';
 
-export const App: React.FC = () => {
+export const App: FC = () => {
   const [getQuery, setQuery] = useState<QueriesType>({
     query: '',
     squery: '&sort=bestmatches&order=desc',

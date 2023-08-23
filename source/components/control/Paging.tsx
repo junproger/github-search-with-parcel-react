@@ -1,6 +1,7 @@
-import * as React from 'react';
+import { FC } from 'react';
 
 import * as styles from './paging.module.css';
+
 import { paging } from '../../utils/paging';
 
 export type Paging = {
@@ -9,7 +10,7 @@ export type Paging = {
   page: number;
 };
 
-export const Paging: React.FC<Paging> = ({ handle, total, page }) => {
+export const Paging: FC<Paging> = ({ handle, total, page }) => {
   return (
     <nav className={styles['paging']}>
       <span>
