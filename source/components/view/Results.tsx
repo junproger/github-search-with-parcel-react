@@ -1,6 +1,7 @@
-import * as React from 'react';
+import { FC, MouseEvent } from 'react';
 
 import * as styles from './results.module.css';
+
 import { ISearchItem } from '../../types/ISearchItem';
 
 export type Results = {
@@ -8,8 +9,8 @@ export type Results = {
   items: ISearchItem[];
 };
 
-export const Results: React.FC<Results> = ({ items, callback }) => {
-  const clickHandle = (e: React.MouseEvent<HTMLLIElement>): void => {
+export const Results: FC<Results> = ({ items, callback }) => {
+  const clickHandle = (e: MouseEvent<HTMLLIElement>): void => {
     if (e.currentTarget.dataset['login']) {
       callback(e.currentTarget.dataset['login']);
     }
@@ -23,7 +24,7 @@ export const Results: React.FC<Results> = ({ items, callback }) => {
             id={user.node_id}
             data-login={user.login}
             className={styles['item']}
-            onClick={(e: React.MouseEvent<HTMLLIElement>): void => clickHandle(e)}
+            onClick={(e: MouseEvent<HTMLLIElement>): void => clickHandle(e)}
           >
             {user.login}
           </li>

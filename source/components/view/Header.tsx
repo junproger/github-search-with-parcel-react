@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC } from 'react';
 
 import * as styles from './header.module.css';
 
@@ -8,7 +8,7 @@ export type Header = {
   title: string;
 };
 
-export const Header: React.FC<Header> = (props: Header) => {
+export const Header: FC<Header> = (props: Header) => {
   const { image, attrib, title } = props;
   return (
     <header>

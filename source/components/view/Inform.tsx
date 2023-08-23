@@ -1,13 +1,14 @@
-import * as React from 'react';
+import { FC } from 'react';
 
 import * as styles from './inform.module.css';
+
 import { IUserInfo } from '../../types/IUserInfo';
 
 export type Inform = {
   inform: IUserInfo | null;
 };
 
-export const Inform: React.FC<Inform> = ({ inform }) => {
+export const Inform: FC<Inform> = ({ inform }) => {
   return (
     <div className={styles['inform']}>
       <table className={styles['tableblock']}>
