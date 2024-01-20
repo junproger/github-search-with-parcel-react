@@ -2,6 +2,7 @@
     "root": true,
     "plugins": [
         "react",
+        "react-hooks",
         "import",
         "prettier",
         "@typescript-eslint"
@@ -11,6 +12,7 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
         "plugin:import/typescript",
         "plugin:import/recommended",
         "plugin:prettier/recommended",
@@ -52,6 +54,8 @@
         ],
         "react/jsx-uses-react": "off",
         "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
         "class-methods-use-this": "off",
         // turn on errors for missing imports
         "import/no-unresolved": "error",
