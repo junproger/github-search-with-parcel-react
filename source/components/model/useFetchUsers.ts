@@ -20,7 +20,7 @@ const useFetchUsers = (queries: QueriesType): IFetchUsers => {
   });
   const { query, squery, page } = queries;
   useEffect(() => {
-    if (!queries.query) {
+    if (!query) {
       setRespn({
         done: true,
         resp: null,
@@ -57,7 +57,7 @@ const useFetchUsers = (queries: QueriesType): IFetchUsers => {
       return dataUsers;
     };
     fetchingUsers();
-  }, [queries]);
+  }, [page, query, squery]);
   return getRespn;
 };
 
